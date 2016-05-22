@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<title>javacript from</title>
+<style>
+.test1{
+	color:#ccc;
+}
+.test2{
+	color:green;
+}
+.test3{
+	color:red;
+}
+</style>
+</head>
+<body onload="checkform('auto')">
+<form action="login.php" method="post" onsubmit="return checkform('manu')">
+<input type="text" name="username" placeholder="用户名" />
+<span></span><br/><br/>
+<input type="password" name="pwd" placeholder="密码" />
+<span></span><br/><br/>
+<button type="submit">注册</button>
+</form>
+<script>
+function getSpan(obj){
+		while(true){
+			if(obj.nextSibling.nodeName!="SPAN"){
+				obj=obj.nextSibling;
+
+			}else{
+				return obj.nextSibling;
+			}
+
+		}
+}
+
+var userobj=document.getElementsByName("username")[0];
+var pwdobj=document.getElementsByName("pwd")[0];
+function checkform(acts){
+	var flag1;
+	var flag2;
+	flag1=subcheck(userobj,"用户名",acts);
+	flag2=subcheck(pwdobj,"密码",acts);
+	if(flag1&&flag2){
+		return true;
+	}else{
+		return false;
+	}
+}
+function subcheck(obj,infor,acts){
+		var statu=false;
+		var spanobj=getSpan(obj);
+		obj.onfocus=function(){
+				if(obj.value==""){
+					spanobj.innerHTML="请输入"+infor;
+					spanobj.className="test1";
+				}
+		}
+		obj.onblur=function(){
+				if(obj.value==""){
+					spanobj.innerHTML=infor+"不能为空";
+					spanobj.className="test3";
+				}else{
+					spanobj.innerHTML=infor+"正确";
+					spanobj.className="test2";
+					statu=true;
+				}
+		}
+		if(acts=="manu"){
+			obj.onblur();
+		}
+		return statu;
+}
+
+</script>
+
+</body>
+</html>

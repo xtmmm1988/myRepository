@@ -1,0 +1,155 @@
+			文件目录
+			一、概述
+			       程序和变量是存储在内存。运行结束就自动关闭。如果想要长期保存程序或者变量。那么需要将程序和变量保存在文件中。
+
+			       PHP是基于LINUX操作系统研发的。
+			       - file   文件
+			       - dir    目录
+			       - block 块
+			       - char   字符文件 打印机
+			       - fifo     输入输出文件 
+			       - link     链接
+			       - unknow 未知
+
+			二、PHP对于文件系统的基础操作
+			       filetype(string $filename)
+				判断文件的类型 ,文件或者是目录
+				返回值：       
+				返回的具体的文件类型：如 dir file
+				失败 false      
+
+			       filesize（string $filename）
+			       获取文件的大小
+			       返回值：文件的大小（bytes）
+			       1TB = 1024 GB    2^40    pow(2,40)
+			       1GB = 1024 MB   2^30    pow(2,30)
+			       1MB = 1024KB    2^20    pow(2,20)
+			       1KB  = 1024bytes 2^10   pow(2,10)
+			      
+			       filectime（string $filename）
+			       文件创建时间
+			       返回：文件创建的时间戳（1970，秒）
+			       
+			       fileatime（string $filename） 
+			       文件的访问时间
+			       返回：文件访问的时间戳（1970，秒）
+			  
+			       filemtime（string $filename）
+			       文件的修改时间
+			       返回:文件修改的时间戳（1970，秒）
+
+			       读、写、执行
+			       is_readable(string $filename)
+			       判断文件是否可读
+			       返回:可读 返回true 否则返回false
+			       
+			       is_writable(string $filename)
+			       判断文件是否可以写
+			       返回:可写 返回true 否则返回false
+				
+			       is_executable(string $filename)
+			       判断文件是否可以执行
+			       返回:可执行 返回true 否则返回false
+
+			       file_exists(string $filename)
+			       判断文件或者目录是否存在
+			       返回：存在 true
+					 不存在 false
+
+			       is_dir(string $pathname)
+			       判断给定的pathname是否是一个目录
+			       返回：是一个目录 true
+					 不是一个目录 false
+
+			       is_file(string $pathname)
+			       判断给定的pathname是否是一个文件
+			       返回：是一个文件 true
+					 不是一个文件 false
+
+			PHP对于目录的操作
+			相对目录和绝对目录 
+			相对目录：相对于当前目录指向的目录 
+			绝对目录：有根目录的目录结构
+					  windows :从盘符开始
+					  linux：从“/”
+
+			目录分隔符：
+			PHP 基于LINUX系统开发：目录分隔符：/
+
+
+			PHP对于目录的操作
+			glob（string $pathname）
+			浏览目录
+			参数：pathname 统配目录内的项目
+			返回：成功数组
+				   失败 false
+
+			opendir(string $pathname)
+			打开一个目录
+			参数：
+			pathname 目录
+			返回:成功 目录资源
+				 失败 false
+
+			readdir（resource $dir）
+			读取目录中的内容
+			参数：dir 打开的目录资源
+			返回：目录下的内容
+
+
+
+
+
+
+			closedir（resource $dir）
+			关闭一个目录资源
+			参数：打开的目录资源
+			返回：成功 true
+				  失败 false
+
+			所有的目录下都有
+			.      :  当前目录
+			..    ：上一级目录
+
+
+
+
+
+
+			   
+
+
+
+
+
+
+
+			       
+			  
+			       
+			       
+			   习题
+			   1、 判断文件大小，将大小格式以人类易读的方式返回。
+			   2、 输出给定文件的修改时间，创建时间，访问时间。
+				 请给出人类易读的时间格式。 
+			   3、 给一个文件，判断文件是否存在，如果存在，判断文件
+				 是否可读，可写，可执行，如果
+				 可读：输出 文件可读， 否则输出文件不可读。
+				 可写：输出 文件可写， 否则输出文件不可写。
+				 可执行：输出 文件可执行， 否则输出文件不可执行。
+			   4、分别用两种方式遍历目录下的目录下的内容。
+				将目录下的内容输出。
+
+
+
+
+
+
+
+
+
+
+
+
+
+

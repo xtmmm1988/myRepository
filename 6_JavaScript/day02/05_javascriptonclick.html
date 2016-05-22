@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <title> javascript case</title>   
+<style>
+li{
+	list-style-type:none;
+}
+
+#top{
+		width:300px;
+		height:30px;
+		line-height:30px;	
+		border:0px;
+		
+}
+#top h3{
+		width:80px;	
+		margin:10px;
+		padding:0px;
+		float:left;
+		background-color:#ccc;
+		font-size:16px;
+		color:#fff;
+		text-align:center;	
+}
+#mian	{
+		width:300px;
+		background-color:#999;
+		height:140px;
+}
+#one{
+	display:block;
+}
+#two{
+	display:none;
+}
+#three{
+	display:none;
+}
+</style>
+ </head>
+ <body>
+ <div >
+	  <div id="top">
+	  <h3 onclick="selType(0)">标题一</h3>
+	  <h3 onclick="selType(1)">标题二</h3>
+	  <h3 onclick="selType(2)">标题三</h3>
+	  </div>
+	  <div id="mian">
+		  <div id="one">
+			  <ul>
+				  <li>新闻一</li>
+				  <li>新闻一</li>
+				  <li>新闻一</li>
+				  <li>新闻一</li>
+				  <li>新闻一</li>
+				  <li>新闻一</li>
+			  </ul>
+		  </div>
+		  <div id="two" >
+			  <ul>
+				  <li>新闻二</li>
+				  <li>新闻二</li>
+				  <li>新闻二</li>
+				  <li>新闻二</li>
+				  <li>新闻二</li>
+				  <li>新闻二</li>
+			  </ul>
+		  </div>
+		  <div id="three" >
+			  <ul>
+				  <li>新闻三</li>
+				  <li>新闻三</li>
+				  <li>新闻三</li>
+				  <li>新闻三</li>
+				  <li>新闻三</li>
+				  <li>新闻三</li>
+			  </ul>
+		  </div>
+	  </div>
+  </div>
+<script type="text/javascript">
+var divobj=document.getElementById("mian").getElementsByTagName("div");
+var h3obj=document.getElementsByTagName("h3");
+            function selType(val) {
+				for(var i=0;i<divobj.length;i++){
+						if(i==val){
+							divobj[i].style.display="block";
+							h3obj[i].style.backgroundColor="#999"
+						}else{
+							divobj[i].style.display="none";
+							h3obj[i].style.backgroundColor="#ccc"
+						}
+				}
+               
+            }
+            
+ </script>
+
+ </body>
+</html>

@@ -1,0 +1,236 @@
+﻿王亚南 
+QQ:2272527814
+GD
+一、GD简介
+       生成动态图片。
+       - 验证码
+       - 水印
+       - 剪切和缩减
+       - 动态曲线图表
+
+二、安装
+       - 确认是否已经安装了GD库。
+        （phpinfo（））     
+       - 改配置文件(php.ini) 
+       - extension_dir 
+       - ;extension=php_gd2.dll,去掉前面的分号。保存文件。
+       - 重启web服务器（apache）
+三、应用
+       1、创建画布
+             imagecreatetruecolor(int $width,int $height);
+             功能:创建画布
+             参数:
+             width 画布的宽
+             height 画布的高
+             返回: 成功返回 资源
+                      失败 false
+             
+        
+       2、画 - 颜色 
+                    imagecolorallocate（resource $img,int $red,
+                    int $green,int $blue）
+                    功能：
+                   创建颜色
+                   参数：
+                    img - 画布资源
+                    red，green，blue 颜色值（0~255）
+                 - 画
+                   imagefill(resource $img,int x,int y,int $color)
+                   功能:
+                   填充画布
+                   参数
+                   img 图片资源
+                   x，y 填充颜色起始点坐标
+                   color  填充的颜色
+                   
+                   imagesetpixel(resource $img,int x,int y,int $color)
+                  功能：画点
+                  参数：
+                  img 画布资源
+                  x，y 点的x轴和y轴坐标
+                  color 点的颜色
+
+                  imageline(resource $img,int $x_1,int $y_1,
+                  int $x_2,int $y_2,int $color)
+                  功能
+                  画线
+                  参数
+                   img 资源
+                   x_1,y_1  线的起始点坐标（x轴，y轴）
+                   x_2,y_2  线的起终止坐标（x轴，y轴）
+                   color  线的颜色
+
+                  
+                  imagerectangle(resource $img,int $x_1,int $y_1,int $x_2,int $y_2,int $color)
+                  imagefilledrectangle(resource $img,
+                                               int $x_1,int $y_1,
+                                              int $x_2,int $y_2, 
+                                              int $color)
+                  功能：空心的矩形
+                 参数：
+                 img ：资源
+                 x_1,y_1:起始点坐标
+                 x_2,y_2：终点坐标
+                 color：矩形边框的颜色
+     
+                 imageellipse(resource $img,int $x,int $y,int $width,int $height, int $color)
+                 功能：圆         
+                 参数
+                 img 资源
+                 x，y 
+                 width：圆的宽 
+                 height: 圆的高
+ 
+                imagefilledellipse（resource $img,int $x,int $y,int $width,int $height,int $color）
+               功能:实心圆。
+
+               imagestring(resource $img,int $font,int $x,int $y,string $str,int $color)
+               功能：在图片上输出文字（水平输出）
+               参数：
+               img 图片资源
+               font 文字的大小（1~5 其中1最新，5最大）
+               x，y 是文字的起始点坐标（x轴和y轴）        
+               str    文字
+               color 颜色
+               imagestringup(resource $img,int $font,int x,int $y,string $str,int $color)
+               功能：在图片上输出文字（垂直输出）
+
+               	
+              功能：输出文字（指定大小，角度，字体）
+              参数：
+              img 资源
+              fontsize 文字大小
+              angle 角度（水平0度，逆时针旋转）
+              x，y   文字的起始点坐标
+              color  文字的颜色
+              ttffile  字体文件（C:\WINDOWS\Fonts）
+              str      输出的文字
+       3、保存/展示         
+             （(jpeg)jpg，gif，png）
+              保存
+             imagejpeg(resource $img,string $filename)
+              $filename：*.jpg/8.jpeg
+             imagepng(resource $img,string $filename)
+            $filename:*.png
+             imagegif(resource $img,string $filename)
+           $filename:*.gif
+            展示
+            png
+            header("Content-Type:image/png")
+            imagepng(resouce $img)
+            GIF
+            header("Content-Type:image/gif")
+            imagegif(resouce $img);
+             jpeg
+            header("Content-Type:image/jpeg")
+            imagejpeg(resouce $img);
+ 
+       4、清理
+             imagedestroy(resouce $img);
+
+
+
+习题：
+1、动手画一个200*200的画布。颜色为绿色。 在浏览器上
+      输出画布。
+2、在一张100*100的红色画布上画一个绿色的点。坐标任意。
+      linux
+      
+      root
+      chmod 777 /home/www -R
+3、请在你的100*100的画布上随机画1000个点。
+4、在一个200*200的画布上，画一个十字。
+5、在一张80（宽）*30（高）画布上随机化10条线。
+6、在一张200*200的画布上，画一个实心矩形。
+7、在一张200*200的画布上，画一个实心的圆。
+9、在一张200*200的画布上，水平输出一行文字
+    “hello php”
+10、在一张200*200的画布上，写一个带有指定字体的字符串 ，字体大小不限制。角度为270
+      
+
+一、不同的图片背景
+imagecreatefromgif(string $filename)
+imagecreatefromjpeg(string $filename)
+imagecreatefrompng(string $filename)
+功能：
+应用不同的图片创建不同的背景
+参数：
+filename：图片的名称
+返回:
+成功-图片的资源
+失败-false
+
+getimagesize(string $filename)
+功能
+获取图片信息
+参数
+filename 要获取信息的图片名称
+返回：图片信息，数组。
+           0-图片的宽
+           1-图片的高
+           2-图片的类型（1=>"gif",2=>"jpeg",3=>"png"）
+
+imagefontwidth(int $font_size);
+功能
+获取给定字符大小的宽度
+参数
+font_size 字符的大小
+返回：
+字符的宽度
+
+imagefontheight(int $font_size);
+功能
+获取给定字符大小的高度
+参数
+font_size 字符的大小
+返回：
+字符的高度
+
+imagecopy(resource $des_img,resource $src_img,int $des_x,int $des_y,int $src_x,int $src_y,int $src_width,int $src_height)
+功能：
+将两张图片合并为一张图片
+参数：
+des_img:目标图片资源（大图片资源）
+src_img:源图片资源（水印图片资源）
+des_x，des_y：目标图片起始点坐标。（水印图片在大图上的起始点坐标）
+src_x,src_y 源图片的起始点坐标。（水印图片的起始点坐标）
+src_width,src_height 源图片的宽和高 （水印图片的宽和高）
+
+图片的缩放和裁剪
+imagecopyresampled(resource $des_img,resource $src_img,int $des_x,int $des_y, int $src_x,int $src_y,int $des_width,int $des_height,int $src_width,int $src_height)
+功能：图片的缩放，裁剪
+参数：
+des_img 被缩放后的图片资源
+src_img  准备缩放的图片资源
+des_x,des_y 被缩放图片的起始位置。
+src_x,src_y   准备缩放的图片的起始点
+des_width,des_height  被缩放后的图片宽、高
+src_width,src_height    准备缩放的图片的宽、高 
+
+图片的翻转和旋转
+imagerotate（resource $img,int $angle,int $color）
+功能：
+图片的旋转
+参数：
+img 图片资源
+angle 图片旋转角度
+color 背景色
+
+习题：
+1、给一张原图片，在原有图片上写上文字“hello world”
+2、在给定的任意原有图片的右下角写上水印文字：
+      “hello world”
+3、请把上题的水印功能，封装到函数中。
+4、请把图片缩放功能封装到一个自定义函数中，要求图片名称
+      和类型可以任意给定，缩放图片宽和高可以任意指定。
+5、把给定图片剪切，从0,0开始剪切，剪切宽度为100,100
+6、完成图片旋转的函数。要求图片名称任意，角度任意。
+7、请将给定的图片沿x轴反转。
+8、请将给定的图片沿y轴反转。
+
+
+
+
+
+
+

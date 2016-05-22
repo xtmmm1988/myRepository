@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<title>jQuery hide show</title>
+
+<script>
+$(function(){
+	//hide():隐藏
+	$("button:eq(0)").click(function(){
+		$("img").hide("slow");//speed单位可以是毫秒，也可以是slow fast
+	});
+	//show():显示
+	$("button:eq(1)").click(function(){
+		$("img").show("fast");
+	});
+	//toggle():隐藏/显示间的切换
+	$("button:eq(2)").click(function(){
+		$("img").toggle(1000);
+	});
+});
+</script>
+</head>
+<body>
+<div>
+<img src="dog.jpg"/>
+<button>hide</button>
+<button>show</button>
+<button>toggle</button>
+</div>
+</body>
+</html>

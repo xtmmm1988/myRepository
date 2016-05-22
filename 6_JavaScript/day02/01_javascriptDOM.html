@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <title> javascript DOM</title> 
+ </head>
+ <body>
+  <from>
+  <input type="checkbox" name="chs[]"/>新闻1<br/>
+  <input type="checkbox" name="chs[]"/>新闻2<br/>
+  <input type="checkbox" name="chs[]"/>新闻3<br/>
+  <input type="checkbox" name="chs[]"/>新闻4<br/>
+  <input type="checkbox" name="chs[]"/>新闻5<br/>
+  <input type="checkbox" name="chs[]"/>新闻6<br/>
+  <input type="checkbox" name="chs[]"/>新闻7<br/>
+  </from>
+  <a href="javascript:selectAll()">全选</a>|<a href="javascript:reverseSelection()">反选</a>|<a href="javascript:unselectAll()">全不选</a>
+  <script type="text/javascript">
+  var obj=document.getElementsByName("chs[]");
+  function selectAll(){
+		for(var i=0;i<obj.length;i++){
+					obj[i].checked=true;
+		}
+  }
+  function unselectAll(){
+		for(var i=0;i<obj.length;i++){
+					obj[i].checked=false;
+		}
+  }
+  function reverseSelection(){
+		for(var i=0;i<obj.length;i++){
+					if(obj[i].checked==true){
+							obj[i].checked=false;
+					}else{
+							obj[i].checked=true;
+					}
+		}
+  }
+
+  </script>
+ </body>
+</html>

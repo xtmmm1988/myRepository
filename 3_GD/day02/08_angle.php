@@ -1,0 +1,16 @@
+<?php
+$fillename="dog.jpg";
+//获取图片信息
+list($width,$height,$type)=getimagesize($fillename);
+$type_array=array(1=>"gif",2=>"jpeg",3=>"png");
+$type_str=$type_array[$type];
+$image_function="imagecreatefrom".$type_str;
+$img=$image_function($fillename);
+$color=imagecolorallocate($img,0,255,0);
+$angle=30;
+$new_img=imagerotate($img,$angle,$color);
+header("content-type:image/png");
+imagepng($new_img);
+imagedestroy($img);
+imagedestroy($new_img);
+?>

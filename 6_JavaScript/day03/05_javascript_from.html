@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<title>javacript from</title>
+</head>
+<body>
+<form action="login.php" method="post" onsubmit="return check()">
+<input type="text" name="username" placeholder="用户名" /><br/><br/>
+<input type="password" name="pwd" placeholder="密码" /><br/><br/>
+<button type="submit">注册</button>
+</form>
+<script>
+var formobj=document.getElementsByTagName("form")[0];
+function check(){
+	if(formobj.username.value==""){
+			alert("用户名不能为空");
+			return false;
+	}
+	if(formobj.pwd.value==""){
+			alert("密码不能为空");
+			return false;
+	}
+	formobj.submit();
+}
+
+</script>
+
+</body>
+</html>

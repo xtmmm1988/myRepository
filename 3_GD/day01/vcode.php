@@ -1,0 +1,34 @@
+<?php
+      $width=80;
+	$height=30;
+	$img=imagecreatetruecolor($width,$height);
+	$color=imagecolorallocate($img,rand(200,255),rand(200,255),rand(200,255));
+    imagefill($img,0,0,$color);
+    $codes="0123456789abcdefghijklmnopqrstuvwxyz";
+	$code="";
+	$num=4;
+	for($i=0;$i<$num;$i++){
+	    $font_color=imagecolorallocate($img,rand(0,150),rand(0,150),rand(0,150));
+		$start=substr(rand(0,strlen($codes)-1),1);
+		$code=substr($codes,$start,1);
+		$x=($width/$num)*$i+5;
+		$y=rand(3,10);
+		imagestring($img,5,$x,$y,$code,$font_color);
+	}
+  $i=1;
+  while($i<=10){
+  $line_color=imagecolorallocate($img,rand(100,200),rand(100,200),rand(100,200));
+  imageline($img,rand(1,79),rand(1,29),rand(1,79),rand(1,29),$line_color);
+  $i++;
+  }
+  $i=1;
+  while($i<=100){
+  $speck_color=imagecolorallocate($img,rand(100,200),rand(100,200),rand(100,200));
+  imagesetpixel($img,rand(1,79),rand(1,29),$speck_color);
+  $i++;
+  }
+header("content-type:image/png");
+imagepng($img);
+imagedestroy($img);
+
+?>

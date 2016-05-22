@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<title>jQuery before after</title>
+
+<script>
+$(function(){
+	//before：在指定节点前面添加HTML元素和文本内容
+	$("h1").before("<a href='#'>百度</a>");
+	//after：在指定节点后面添加HTML元素和文本内容
+	$("h1").after("<a href='#'>淘宝</a>");
+});
+</script>
+</head>
+<body>
+<div>
+<h1>我是标签H1</h1>
+<h2>我是标签H2</h2>
+<h3>我是标签H3</h3>
+<h4>我是标签H4</h4>
+</div>
+</body>
+</html>

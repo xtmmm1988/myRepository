@@ -1,0 +1,25 @@
+<?php
+header('Content-Type:text/html;charset=utf8');
+//获取id
+$id=$_REQUEST['id'];
+//连接数据库
+$link=mysql_connect('localhost','root','');
+//打开数据库
+mysql_select_db('zs');
+//执行sql语句
+$sql="delete from users where id=".$id;
+mysql_query($sql);
+//增删改的影响行数
+$count=mysql_affected_rows();
+//判断
+if($count>0){
+	?>
+<script>
+alert('删除成功');
+location.href='info.php';
+</script>
+<?php
+}
+//关闭数据库
+mysql_close();
+?>

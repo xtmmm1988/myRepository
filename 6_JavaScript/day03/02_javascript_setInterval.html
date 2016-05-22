@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<tile>javacript setInterval clearInterval</tile>
+</head>
+<body>
+<div id="d"style="background-color:pink;width:100px;height:100px;position:absolute;top:0px;left:0px;">点击停止</div>
+<script>
+var dobj=document.getElementById("d");
+var x=0;
+var y=0;
+var xs=10;
+var ys=10;
+var test=function(){
+	x=x+xs;
+	y=y+ys;
+	dobj.style.left=x;
+	dobj.style.top=y;
+	if(x>document.body.clientWidth||x<0){
+		xs=-xs;
+	}
+	if(y>document.body.clientHeight||y<0){
+			ys=-ys;
+	}
+
+}
+var iobj=setInterval("test()",100);
+dobj.onmouseover = function(){
+	clearInterval(iobj);
+}
+dobj.onmouseout = function(){
+	iobj=setInterval("test()",100);
+}
+</script>
+</body>
+</html>

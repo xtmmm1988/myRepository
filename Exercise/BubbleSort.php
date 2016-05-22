@@ -1,0 +1,13 @@
+<?php
+$arr=array(50,80,54,100,4,500,3,60);
+for($i=1;$i<count($arr);$i++){
+       for($j=0;$j<count($arr)-1;$j++){
+	            if($arr[$j]>$arr[$j+1]){
+				      $tamp=$arr[$j];
+					  $arr[$j]=$arr[$j+1];
+					  $arr[$j+1]=$tamp;
+				}
+	   }
+}
+var_dump($arr);
+?>

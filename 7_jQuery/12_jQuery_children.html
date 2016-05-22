@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<title>jQuery DOM</title>
+
+<script>
+$(function(){
+	//children():某一节点下的所有子节眯
+	$("div").children().css("background-color","#ccc");
+	//find():参数必须有，找到当前节点的指定子节点
+	$("div").find("h2").css("color","pink");
+});
+</script>
+</head>
+<body>
+<div>
+<h1>我是标签H1</h1>
+<h2>我是标签H2</h2>
+<ul>
+<li>我是新闻1</li>
+<li>我是新闻2</li>
+<li>我是新闻3</li>
+<li>我是新闻4</li>
+</ul>
+</div>
+</body>
+</html>

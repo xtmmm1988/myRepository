@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<title>javacript open</title>
+</head>
+<body>
+<script>
+var sonobj=window.open("04_javascript_open_son.html","_blank","width=300px,height=300px,resizeble=yes");
+function chang(){
+	sonobj.document.bgColor="pink";
+}
+function showparent(){
+	alert("你好，我是父页面");
+}
+function callson(){
+	sonobj.showson();
+}
+
+</script>
+<button onclick="chang()">chang</button>
+<button onclick="showparent()">callparent</button>
+<button onclick="callson()">callson</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<title>jQuery slide</title>
+
+<script>
+$(function(){
+	//slideUp():向上滚动
+	$("button:eq(0)").click(function(){
+		$("img").slideUp(2000)//speed单位可以是毫秒，也可以是slow fast、normal
+	});
+	//slideDown():向下滚动
+	$("button:eq(1)").click(function(){
+		$("img").slideDown(1000);
+	});
+	//slideToggle()：上下滚动间的切换
+	$("button:eq(2)").click(function(){
+		$("img").slideToggle(1000);
+	});
+	
+	
+});
+</script>
+</head>
+<body>
+<div>
+<img src="dog.jpg"/>
+<button>slideUp</button>
+<button>slideDown</button>
+<button>slideToggle</button>
+
+
+</div>
+</body>
+</html>

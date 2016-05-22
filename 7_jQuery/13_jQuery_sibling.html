@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<title>jQuery Sibling</title>
+
+<script>
+$(function(){
+	//siblings():当不给参数时指所有同胞节点
+	$("li").siblings().css("color","#ccc");
+	//next()：下一个兄弟节点
+	$("h1").next().css("color","pink");
+	//nextUntil():当前节点向下到指定同胞节点间的所有同胞节点
+	$("h2").nextUntil("h4").css("background-color","#ccc");
+	//prev():当前节点的上一个同胞节点
+	$("ul").prev().css("color","green");
+	//prevAll()：当前节点向上的所有同胞节点
+	$("h2").prevAll().css("border","1px solid red");
+	//prevUntil():当前节点向上到指定同胞节点间的所有同胞节点
+	$("h2").prevUntil("h6").css("color","blue");
+
+});
+</script>
+</head>
+<body>
+<div>
+<h6>我是标签H6</h6>
+<h5>我是标签H5</h5>
+<h1>我是标签H1</h1>
+<h2>我是标签H2</h2>
+<h3>我是标签H3</h3>
+<h4>我是标签H4</h4>
+<ul>
+<li>我是新闻1</li>
+<li>我是新闻2</li>
+<li>我是新闻3</li>
+<li>我是新闻4</li>
+</ul>
+</div>
+</body>
+</html>

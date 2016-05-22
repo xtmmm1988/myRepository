@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<title>jQuery的引用</title>
+<script>
+$(document).ready(function(){
+	$("li").first().css("color","pink");
+	$("li").last().css("color","red");
+	$("li").eq(2).css("color","green");
+	$("p").not(".p1").css("color","pink");
+
+	
+});
+</script>
+</head>
+<body>
+<div id="div1">
+<p class="p1">我是p标签</p>
+<p>我是p标签</p>
+<p>我是p标签</p>
+<ul>
+<li>我是新闻1</li>
+<li>我是新闻2</li>
+<li>我是新闻3</li>
+<li>我是新闻4</li>
+<li>我是新闻5</li>
+</ul>
+</div>
+</body>
+</html>

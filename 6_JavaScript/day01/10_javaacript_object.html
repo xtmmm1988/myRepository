@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>javascript对象</title>
+</head>
+<body>
+<script type=text/javascript>
+var i=new String("hello world");
+//获取字符串长度
+//document.write(i.length);
+document.write("<br/>");
+//将字符串转换成大写
+document.write(i.toUpperCase());
+var a=new String("HELLO WORLD");
+document.write("<br/>");
+//将字符串转换成小写
+document.write(a.toLowerCase());
+document.write("<br/>");
+var j="abcd";
+//返回字符串在字符串中首次出现的位置
+document.write(j.indexOf("b"));
+document.write(j.search("b"));
+document.write("<br/>");
+//字符串的替换
+document.write(j.replace("abcd","hijk"));
+document.write("<br/>");
+//截取
+var test="abcdefghijklmn";
+document.write(test.substr("3",3));
+document.write("<br/>");
+//拆分
+document.write(test.split("d",2));
+
+
+</script>
+</body>
+</html>

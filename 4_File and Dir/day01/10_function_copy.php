@@ -1,0 +1,35 @@
+<?php
+header("content-type:text/html;charset=utf-8");
+$old_dir="test";
+$new_dir="test01";
+copyDir($old_dir,$new_dir);
+function copyDir($old_dir,$new_dir){
+       //判断$new_dir是否存在
+	   if(file_exists($new_dir)){
+		      //如果存在，且有一个同名的文件
+	          if(is_file($new_dir)){
+				  echo "目标是文件，无法拷贝 ";
+				  exit;
+			  }
+	   }else{
+	        mkdir($new_dir);
+	   }
+	   //打开目录
+	   $dir=opendir($old_dir);
+	  while($filename=readdir($dir)){
+	         //过滤“.”和".."
+			 if($filename!="."&&$filename!=".."){
+			     //拼装完整名称
+				 $old_file=$old_dir."/".$filename;
+				 $new_file=$new_dir."/".$filename;
+				 if(is_dir($old_file)){
+				      copyDir($old_file,$new_file);
+				 }else{
+				       copy($old_file,$new_file);
+				 }
+			 }
+	   }
+	   //关闭资源
+	   closedir($dir);
+}
+?>

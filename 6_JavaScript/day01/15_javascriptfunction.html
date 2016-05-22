@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>javascript  function</title>
+</head>
+<body>
+<script type=text/javascript>
+function showTable(bgcolor1,bgcolor2,x,y){
+			document.write("<table border=1 width='300px' bgcolor='"+bgcolor1+"'>");
+			for(var i=1;i<=x;i++){
+						if(i%2==1){
+									document.write("<tr bgcolor='"+bgcolor2+"'>");
+						}else{
+									document.write("<tr>");
+						}
+						for(var j=1;j<=y;j++){
+									document.write("<td>'"+i+"'</td>");
+						}
+						document.write("</tr>");
+			}
+			
+			document.write("</table>");
+}
+showTable("pink","grey",3,4);
+</script>
+</body>
+</html>
