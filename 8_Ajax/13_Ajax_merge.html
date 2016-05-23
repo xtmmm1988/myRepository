@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title> Ajax map</title>
+<style>
+</style>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<script>
+$(function(){
+	$("input").click(function(){//绑定click事件		
+		var testArr = new Array(5,4,3,2,1); //定义数组teatArr
+		var testArr2 = new Array(1,2,3,4,5);//定义数组teatArr2
+		var testArr3 = $.merge(testArr,testArr2);//merge合并数组；参数：数组名称1,数组名称1,...数组名称n;
+		alert(testArr3);		
+	});
+	
+});
+
+</script>
+</head>	
+<body>  
+	<input type="button" value="登录" /> 
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title> Ajax trim each</title>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<script>
+$(function(){
+	$("input").click(function(){//绑定click事件
+		var str=" hello "
+		alert(str);
+		alert($.trim(str));//trim清除字符串两边的空格
+		var testArr = new Array(1,7,56,380,25); 
+		$.each(testArr,function(key,value){	//each 数组遍历
+			alert(key+":"+value);
+			$("div").append(key+":"+value+"<br/>");
+		});
+	});
+	
+});
+
+</script>
+</head>	
+<body>  
+	<input type="button" value="登录" /> 
+	<div></div>
+</body>
+</html>

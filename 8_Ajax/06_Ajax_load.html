@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title> Ajax load get post</title>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<script>
+$(function(){
+	/*$("button").click(function(){//绑定点击事件
+		$("div").load("test.php",{username:"tom"},function(response,status,xhr){//load参数：url data callback
+			alert(response);//返回结果
+			alert(status);//状态
+			alert(xhr); //数组
+		});
+	});*/
+	$("button").click(function(){//绑定点击事件	
+		//get全局的不需要选择器
+		$.get("test.php",{username:"tom"},function(response,status,xhr){//get参数：url data callback		
+			if(status == "success"){
+				$("div").html(response);
+			}
+		});
+	});
+	/*$("button").click(function(){//绑定点击事件		
+		$.post("test1.php",{username:"tom"},function(response,status,xhr){//post参数：url data callback			
+			if(status == "success"){
+				$("div").html(response);
+			}
+		});
+	});*/
+});
+</script>
+</head>	
+<body>
+	<button>click</button>
+	<div></div>
+</body>
+</html>

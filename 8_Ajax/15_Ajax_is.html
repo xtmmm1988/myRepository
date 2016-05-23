@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title> Ajax isArray() isFunction() isNumeric() type()</title>
+<style>
+</style>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<script>
+$(function(){
+	$("input").click(function(){//绑定click事件
+		var testArr = new Array(1,5,90,80);//定义数组
+		if($.isArray(testArr)){   //isArray()判断是否是数组，参数一个变量
+			alert("testArr是数组");
+		}else{
+			alert("testArr不是数组");
+		}
+
+		var testFunction = function(){};
+		if($.isFunction(testFunction)){  //isArrtestFunctionay()判断是否是函数，参数一个变量
+			alert("testFunction是函数");
+		}else{
+			alert("testFunction不是函数");
+		}
+
+		var testInt=8;
+		if($.isNumeric(testInt)){   //isArrtestFunctionay()判断是否是数值，参数一个变量
+			alert("testInt是数");
+		}else{
+			alert("testInt不是数");
+		}
+
+		var a = 8;
+		alert($.type(a));  //type():判断一个字符串的数据类型
+		
+	});
+});
+
+</script>
+</head>	
+<body>  
+	<input type="button" value="登录" /> 
+	<div></div>
+</body>
+</html>

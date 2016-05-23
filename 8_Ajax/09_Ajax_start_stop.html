@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title> Ajax ajaxStart ajaxStop</title>
+<style>
+div{
+	display:none;
+}
+</style>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<script>
+$(function(){
+	$(document).ajaxStart(function(){//响应ajax请求时调用ajaxStart
+		$("div").show();//显示div
+	}).ajaxStop(function(){//响应ajax结束时调用ajaxStop
+		$("div").hide();//隐藏div
+	});
+	$("#button").click(function(){//绑定点击事件
+		$.ajax({//参数 url:地址,success:状态;
+			url:"test.php",
+			success:function(response,status,xhr){
+				alert(response);
+			}
+		});
+	});
+});
+
+</script>
+</head>	
+<body>
+  
+	<input type="button" id="button" value="登录" />	  
+  <div>正在缓存中...</div>
+</body>
+</html>

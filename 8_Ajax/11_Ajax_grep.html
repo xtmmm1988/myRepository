@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title> Ajax grep</title>
+<style>
+</style>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<script>
+$(function(){
+	$("input").click(function(){//绑定click事件		
+		var testArr = new Array(1,7,56,380,25); //定义数组teatArr
+		var bigone = $.grep(testArr,function(value,key){//grep 过滤数组元素;参数:数组名称，加调函数
+			return value>10;		
+		});
+		alert(bigone);
+		$.each(testArr,function(key,value){	//each 数组遍历
+			alert(key+":"+value);		
+		});
+	});
+	
+});
+
+</script>
+</head>	
+<body>  
+	<input type="button" value="登录" /> 
+	<div></div>
+</body>
+</html>

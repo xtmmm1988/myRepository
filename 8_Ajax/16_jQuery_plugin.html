@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>jQuery plugin</title>
+<style>
+</style>
+<script type="text/javascript" src="jquery-2.2.3.js"></script>
+<script type="text/javascript" src="../valiade/jquery.validate.js"></script>
+<script type="text/javascript" src="../valiade/jquery.validate.messages_zh.js"></script>
+<script>
+$(function(){
+	$("form").validate({
+		rules:{
+			username:{
+				required:true,
+				minlength:5,
+				maxlength:30
+			},
+			pwd:{
+				required:true,
+				minlength:6,
+				maxlength:10
+			},
+			email:{
+				required:true,
+				minlength:6,
+				maxlength:30
+			},
+		}
+	});
+	
+});
+
+</script>
+</head>	
+<body>
+	<form action="test.php" method="post">
+		<input type="text" name="username" placeholder="用户名" /><br/><br/>
+		<input type="password" name="pwd" placeholder="密码" /><br/><br/>
+		<input type="email" name="email" placeholder="邮箱" "/><br/><br/>
+		<button type="submit">登录</buton>
+	</form>
+</body>
+</html>
