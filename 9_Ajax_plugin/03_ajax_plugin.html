@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title> 自定义插件 </title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
+<script type="text/javascript" src="../valiade/jquery-2.2.3.js"></script>
+<script type="text/javascript" src="../valiade/jquery.nav.js"></script>
+<style>
+	ul,li{
+		margin:0;
+		padding:0;
+	}
+	.lists{
+		width:500px;
+		margin:50px auto;
+		list-style-type:none;		
+		font-size:14px;
+		color:#fff;
+		
+	}
+	.lists li{
+		float:left;
+		margin-right:50px;
+		line-height:18px;
+		width:100px;
+		background-color:#999;
+	}
+	
+</style>
+<script>
+$(function(){
+	$.nav("green");
+});
+</script>
+</head>
+
+<body>
+<ul class="lists">
+  <li>下拉列表1
+	<ul class="nav">
+	  <li>下拉列表11</li>
+	  <li>下拉列表12</li>
+	  <li>下拉列表13</li>
+	  <li>下拉列表14</li>
+	  <li>下拉列表15</li>
+	</ul>
+  </li>
+
+  <li>下拉列表2
+	<ul class="nav">
+	  <li>下拉列表21</li>
+	  <li>下拉列表22</li>
+	  <li>下拉列表23</li>
+	  <li>下拉列表24</li>
+	  <li>下拉列表25</li>
+	</ul>
+  </li>
+
+  <li>下拉列表3
+	<ul class="nav">
+	  <li>下拉列表31</li>
+	  <li>下拉列表32</li>
+	  <li>下拉列表33</li>
+	  <li>下拉列表34</li>
+	  <li>下拉列表35</li>
+	</ul>
+  </li>
+
+</ul>
+</body>
+</html>

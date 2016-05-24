@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title> new document </title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
+<script type="text/javascript" src="../valiade/jquery-2.2.3.js"></script>
+<script>
+$(function(){
+	$("p").hover(function(){
+		$("p").css("color","pink");
+	},function(){
+		$("p").css("color","green");
+	});
+	$("div").hover(function(){
+		$(this).html("你好");
+	},function(){
+		$(this).html("再见");
+	})
+});
+</script>
+</head>
+
+<body>
+<p>我是P标签</p>
+<div>我是P标签</div>
+</body>
+</html>
